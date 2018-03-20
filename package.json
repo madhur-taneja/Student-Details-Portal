@@ -1,0 +1,25 @@
+{
+  "name": "student-portal",
+  "version": "1.0.0",
+  "description": "This project contains a web page the inputs student details, stores them in the local storage and displays them.",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+	"build": "babel ./js/* -d ES6"
+  },
+  "keywords": [
+    "Student",
+    "Portal",
+    "Student",
+    "Portal",
+    "details",
+    "information"
+  ],
+  "author": "Madhur Taneja",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1"
+  }
+}

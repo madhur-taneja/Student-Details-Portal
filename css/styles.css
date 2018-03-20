@@ -1,0 +1,13 @@
+
+.carousel-inner {
+  display: block;
+  height: 540px;
+}
+
+th {
+  text-align: center;
+}
+
+.material-icons {
+  font-size: 16px;
+}

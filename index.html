@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title> Student Portal </title>
+  <!-- <base href="/"> -->
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <!-- <link rel="icon" type="image/x-icon" href="favicon.ico"> -->
+</head>
+
+<body>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12 col-sm-12">
+        <header class="jumbotron">
+          <h1 class="text-center"> Student Information Portal </h1>
+        </header>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12 col-sm-12">
+        <nav class="navbar navbar-default">
+          <!-- Brand and toggle get grouped for better mobile display -->
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#myCarousel"> HOME </a>
+          </div>
+
+          <!-- Collect the nav links, forms, and other content for toggling -->
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+              <li class="active"><a href="#details"> DISPLAY DETAILS <span class="sr-only">(current)</span></a></li>
+              <li><a href="#forms"> ADD DETAILS <span class="sr-only">(current)</span></a></li>
+              <li><a href="#details"> DELETE DETAILS <span class="sr-only">(current)</span></a></li>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> SEARCH BY <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li><a href="#"> Name </a></li>
+                  <li><a href="#"> Roll Number </a></li>
+                  <li><a href="#"> Section </a></li>
+                  <li role="separator" class="divider"></li>
+                  <li><a href="#"> Gender </a></li>
+                </ul>
+              </li>
+            </ul>
+            <form class="navbar-form navbar-left">
+              <div class="form-group">
+                <input type="text" class="form-control" placeholder="Search">
+              </div>
+              <button type="submit" class="btn btn-default"> SUBMIT </button>
+            </form>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="#"> ABOUT US </a></li>
+              <li><a href="#contact"> CONTACT </a></li>
+            </ul>
+          </div><!-- /.navbar-collapse -->
+        </nav>
+      </div>
+    </div>
+
+    <!-- Carousels -->
+    <div class="row">
+      <div class="col-md-12 col-sm-12">
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+          <!-- Indicators -->
+          <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+          </ol>
+
+          <!-- Wrapper for slides -->
+          <div class="carousel-inner">
+            <div class="item active">
+              <img class="center-block img-responsive" src="img/study1.jpg" alt="Los Angeles">
+            </div>
+
+            <div class="item">
+              <img class="center-block img-responsive" src="img/study4.jpg" alt="Chicago">
+            </div>
+
+            <div class="item">
+              <img class="center-block img-responsive" src="img/study6.jpg" alt="New York">
+            </div>
+          </div>
+
+          <!-- Left and right controls -->
+          <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="right carousel-control" href="#myCarousel" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-12 col-md-12">
+        <hr>
+      </div>
+    </div>
+
+
+    <!-- Form -->
+    <div class="row">
+      <div class="col-sm-6 col-md-6">
+        <img src="img/study7.jpg" alt="Me trying to finish the semester like...." class="img-responsive">
+      </div>
+      <div class="col-md-6 col-sm-6">
+        <form id="forms" class="form-horizontal row">
+          <div class="form-group col-sm-12">
+            <label for="name" class="control-label "> Name: </label>
+            <input type="text" class="form-control" id="fname" placeholder="Enter Full Name" name="fullname">
+          </div>
+          <div class="form-group col-sm-12 col-md-12">
+            <label for="Roll No." class="control-label"> Roll Number: </label>
+            <input type="number" class="form-control" id="rnumber" placeholder="Enter Roll No." name="rollnumber">
+          </div>
+          <div class="form-group col-sm-12 col-md-12">
+            <label id="sect"> Section:
+              <input type="radio" name="section" value="uca"> U.C.A.
+              <input type="radio" name="section" value="da"> D.A.
+              <input type="radio" name="section" value="java"> JAVA
+              <input type="radio" name="section" value="cpm"> C.P.M.
+              <input type="radio" name="section" value="pega"> PEGA
+            </label>
+          </div>
+          <div class="form-group col-sm-12 col-md-12">
+            <label id="gen"> Gender:
+              <input type="radio" name="gender" value="male"> Male
+              <input type="radio" name="gender" value="female"> Female
+            </label>
+          </div>
+          <div class="form-group col-sm-12 col-md-12">
+            <button type="submit" class="btn btn-primary" onclick="newStudent()">Submit</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-12 col-md-12">
+        <hr>
+      </div>
+    </div>
+
+    <!-- Table -->
+    <div class="row">
+      <section class="details text-center col-sm-12 col-md-12" id="details">
+        <table class="table table-responsive table-bordered table-striped text-center text-uppercase">
+          <thead>
+            <tr>
+              <th> Full Name </th>
+              <th> Roll Number </th>
+              <th> Section </th>
+              <th> Gender </th>
+              <th> Action </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td> John Doe </td>
+              <td> 1 </td>
+              <td> UCA </td>
+              <td> Male </td>
+              <td> <button type="button" class="btn btn-info" onclick="editStudent.call(this)"> Edit <i class="material-icons tiny"> edit </i></button>
+              <button type="button" class="btn btn-danger" onclick="deleteStudent.call(this)"> Delete <i class="material-icons tiny"> delete </i></button> </td>
+            </tr>
+            <tr>
+              <td> Mary Moe </td>
+              <td> 2 </td>
+              <td> CPM </td>
+              <td> Female </td>
+              <td> <button type="button" class="btn btn-info" onclick="editStudent.call(this)"> Edit <i class="material-icons tiny"> edit </i></button>
+              <button type="button" class="btn btn-danger" onclick="deleteStudent.call(this)"> Delete <i class="material-icons tiny"> delete </i></button> </td>
+            </tr>
+            <tr>
+              <td> July Dooley </td>
+              <td> 3 </td>
+              <td> JAVA </td>
+              <td> Female </td>
+              <td> <button type="button" class="btn btn-info" onclick="editStudent.call(this)"> Edit <i class="material-icons tiny"> edit </i></button>
+              <button type="button" class="btn btn-danger" onclick="deleteStudent.call(this)"> Delete <i class="material-icons tiny"> delete </i></button> </td>
+            </tr>
+            <tr>
+              <td><input type="text" class="form-control" id="fname" placeholder="Enter Full Name" name="fullname" value="July Dooley"> </td>
+              <td> 3 </td>
+              <td> JAVA </td>
+              <td> Female </td>
+              <td> <button type="button" class="btn btn-info" onclick="editStudent()"> Edit <i class="material-icons tiny"> edit </i></button>
+              <button type="button" class="btn btn-danger" onclick="deleteStudent.call(this)"> Delete <i class="material-icons tiny"> delete </i></button> </td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+    </div>
+
+    <div class="row">
+      <section class="about-us text-center col-sm-12 col-md-12" id="about">
+        <h2> ABOUT US </h2>
+        <p> Blah blah blah </p>
+      </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="row footer text-center" id="contact">
+      <div class="col-md-6 mb-6 mb-lg-0">
+        <h4 class="text-uppercase mb-4">Location</h4>
+        <p class="lead mb-0"> Chandigarh, India
+        </div>
+        <div class="col-md-6 mb-6 mb-lg-0">
+          <h4 class="text-uppercase mb-4">Around the Web</h4>
+          <ul class="list-inline mb-0">
+            <li class="list-inline-item">
+              <a class="btn btn-outline-light btn-social text-center rounded-circle" href="https://www.facebook.com/madhur.taneja" target="_blank">
+                <i class="fa fa-fw fa-facebook"></i>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a class="btn btn-outline-light btn-social text-center rounded-circle" href="https://twitter.com/madhur-taneja" target="_blank">
+                <i class="fa fa-fw fa-twitter"></i>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a class="btn btn-outline-light btn-social text-center rounded-circle" href="https://www.linkedin.com/in/madhur-taneja" target="_blank">
+                <i class="fa fa-fw fa-linkedin"></i>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a class="btn btn-outline-light btn-social text-center rounded-circle" href="https://github.com/madhur-taneja" target="_blank">
+                <i class="fa fa-fw fa-github"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </footer>
+
+      <div class="row">
+        <div class="col-sm-12 col-md-12">
+          <hr>
+        </div>
+      </div>
+
+      <div class="row copyrights text-center">
+        <div class="col-sm-12 col-md-12">
+          <p> &copy; 2018 - Madhur Taneja, All Copyrights Reserved </p>
+        </div>
+      </div>
+
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+
+  </body>
+  </html>
