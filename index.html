@@ -3,19 +3,21 @@
 <head>
   <meta charset="utf-8">
   <title> Student Portal </title>
-  <!-- <base href="/"> -->
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" integrity="sha384-3AB7yXWz4OeoZcPbieVW64vVXEwADiYyAEhwilzWsLw+9FgqpyjjStpPnpBO8o8S" crossorigin="anonymous">
+
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
   <!-- <link rel="icon" type="image/x-icon" href="favicon.ico"> -->
+
 </head>
 
 <body>
   <div class="container-fluid">
-    <div class="row">
+    <div class="row jt">
       <div class="col-md-12 col-sm-12">
         <header class="jumbotron">
           <h1 class="text-center"> Student Information Portal </h1>
@@ -23,7 +25,7 @@
       </div>
     </div>
 
-    <div class="row">
+    <div class="row nb">
       <div class="col-md-12 col-sm-12">
         <nav class="navbar navbar-default">
           <!-- Brand and toggle get grouped for better mobile display -->
@@ -43,7 +45,8 @@
               <li class="active"><a href="#details"> DISPLAY DETAILS <span class="sr-only">(current)</span></a></li>
               <li><a href="#forms"> ADD DETAILS <span class="sr-only">(current)</span></a></li>
               <li><a href="#details"> DELETE DETAILS <span class="sr-only">(current)</span></a></li>
-              <li class="dropdown">
+           </ul>
+              <!-- <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> SEARCH BY <span class="caret"></span></a>
                 <ul class="dropdown-menu">
                   <li><a href="#"> Name </a></li>
@@ -59,10 +62,10 @@
                 <input type="text" class="form-control" placeholder="Search">
               </div>
               <button type="submit" class="btn btn-default"> SUBMIT </button>
-            </form>
+            </form> -->
             <ul class="nav navbar-nav navbar-right">
-              <li><a href="#"> ABOUT US </a></li>
-              <li><a href="#contact"> CONTACT </a></li>
+              <li class="text-right"><a href="#about" > ABOUT US </a></li>
+              <li class="text-right"><a href="#contact"> CONTACT </a></li>
             </ul>
           </div><!-- /.navbar-collapse -->
         </nav>
@@ -70,7 +73,7 @@
     </div>
 
     <!-- Carousels -->
-    <div class="row">
+    <div class="row carousel">
       <div class="col-md-12 col-sm-12">
         <div id="myCarousel" class="carousel slide" data-ride="carousel">
           <!-- Indicators -->
@@ -108,20 +111,21 @@
       </div>
     </div>
 
-    <div class="row">
-      <div class="col-sm-12 col-md-12">
-        <hr>
-      </div>
-    </div>
-
-
     <!-- Form -->
-    <div class="row">
+    <div class="row" id="forms">
+      <div class="col-sm-12 col-md-12 text-center text-uppercase">
+          <h3> Register Yourself </h3>
+      </div>
+      <div class="col-sm-12 col-md-12 text-center">
+        <span class="outer-line"></span>
+        <span class="fas fa-star" aria-hidden="true" style="margin:10px 0"></span>
+        <span class="outer-line"></span>
+      </div>
       <div class="col-sm-6 col-md-6">
         <img src="img/study7.jpg" alt="Me trying to finish the semester like...." class="img-responsive">
       </div>
       <div class="col-md-6 col-sm-6">
-        <form id="forms" class="form-horizontal row">
+        <form class="form-horizontal row">
           <div class="form-group col-sm-12">
             <label for="name" class="control-label "> Name: </label>
             <input type="text" class="form-control" id="fname" placeholder="Enter Full Name" name="fullname">
@@ -152,15 +156,13 @@
       </div>
     </div>
 
-    <div class="row">
-      <div class="col-sm-12 col-md-12">
-        <hr>
-      </div>
-    </div>
 
     <!-- Table -->
-    <div class="row">
-      <section class="details text-center col-sm-12 col-md-12" id="details">
+    <div class="row" id="details">
+      <section class="details text-center col-sm-12 col-md-12">
+        <div class="page-header">
+          <h1> Details </h1>
+        </div>
         <table class="table table-responsive table-bordered table-striped text-center text-uppercase">
           <thead>
             <tr>
@@ -196,64 +198,72 @@
               <td> <button type="button" class="btn btn-info" onclick="editStudent.call(this)"> Edit <i class="material-icons tiny"> edit </i></button>
               <button type="button" class="btn btn-danger" onclick="deleteStudent.call(this)"> Delete <i class="material-icons tiny"> delete </i></button> </td>
             </tr>
-            <tr>
-              <td><input type="text" class="form-control" id="fname" placeholder="Enter Full Name" name="fullname" value="July Dooley"> </td>
-              <td> 3 </td>
-              <td> JAVA </td>
-              <td> Female </td>
-              <td> <button type="button" class="btn btn-info" onclick="editStudent()"> Edit <i class="material-icons tiny"> edit </i></button>
-              <button type="button" class="btn btn-danger" onclick="deleteStudent.call(this)"> Delete <i class="material-icons tiny"> delete </i></button> </td>
-            </tr>
           </tbody>
         </table>
       </section>
     </div>
 
-    <div class="row">
-      <section class="about-us text-center col-sm-12 col-md-12" id="about">
+    <div class="row" id="about">
+      <section class="about-us text-center col-sm-12 col-md-12">
         <h2> ABOUT US </h2>
+        <span class="outer-line"></span>
+        <span class="fas fa-star" aria-hidden="true" style="margin:10px 0"></span>
+        <span class="outer-line"></span>
         <p> Blah blah blah </p>
       </section>
     </div>
 
     <!-- Footer -->
     <footer class="row footer text-center" id="contact">
+      <h3> CONTACT </h3>
+      <div class="col-sm-12 col-md-12">
+        <span class="outer-line"></span>
+        <span class="fas fa-star" aria-hidden="true" style="margin:10px 0"></span>
+        <span class="outer-line"></span>
+      </div>
       <div class="col-md-6 mb-6 mb-lg-0">
         <h4 class="text-uppercase mb-4">Location</h4>
         <p class="lead mb-0"> Chandigarh, India
-        </div>
-        <div class="col-md-6 mb-6 mb-lg-0">
+      </div>
+      <div class="col-md-6 mb-6 mb-lg-0">
           <h4 class="text-uppercase mb-4">Around the Web</h4>
           <ul class="list-inline mb-0">
             <li class="list-inline-item">
-              <a class="btn btn-outline-light btn-social text-center rounded-circle" href="https://www.facebook.com/madhur.taneja" target="_blank">
-                <i class="fa fa-fw fa-facebook"></i>
+              <a class="btn btn-outline-light btn-social text-center" href="https://www.facebook.com/madhur.taneja" target="_blank">
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fab fa-facebook-f fa-stack-1x fa-inverse"></i>
+                </span>
               </a>
             </li>
             <li class="list-inline-item">
               <a class="btn btn-outline-light btn-social text-center rounded-circle" href="https://twitter.com/madhur-taneja" target="_blank">
-                <i class="fa fa-fw fa-twitter"></i>
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+                </span>
               </a>
             </li>
             <li class="list-inline-item">
-              <a class="btn btn-outline-light btn-social text-center rounded-circle" href="https://www.linkedin.com/in/madhur-taneja" target="_blank">
-                <i class="fa fa-fw fa-linkedin"></i>
+              <a class="btn btn-outline-light btn-social text-center" href="https://www.linkedin.com/in/madhur-taneja" target="_blank">
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fab fa-linkedin fa-stack-1x fa-inverse"></i>
+                </span>
               </a>
             </li>
             <li class="list-inline-item">
-              <a class="btn btn-outline-light btn-social text-center rounded-circle" href="https://github.com/madhur-taneja" target="_blank">
-                <i class="fa fa-fw fa-github"></i>
+              <a class="btn btn-outline-light btn-social text-center" href="https://github.com/madhur-taneja" target="_blank">
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                </span>
               </a>
             </li>
           </ul>
         </div>
       </footer>
 
-      <div class="row">
-        <div class="col-sm-12 col-md-12">
-          <hr>
-        </div>
-      </div>
 
       <div class="row copyrights text-center">
         <div class="col-sm-12 col-md-12">

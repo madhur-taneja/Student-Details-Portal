@@ -1,5 +1,5 @@
 {
-  "name": "student-portal",
+  "name": "student-details-portal",
   "version": "1.0.0",
   "description": "This project contains a web page the inputs student details, stores them in the local storage and displays them.",
   "main": "main.js",
@@ -9,9 +9,9 @@
   },
   "keywords": [
     "Student",
+	"Details",
     "Portal",
-    "Student",
-    "Portal",
+    "Student Details Portal",
     "details",
     "information"
   ],

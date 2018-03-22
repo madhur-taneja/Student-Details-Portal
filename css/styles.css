@@ -1,3 +1,15 @@
+.jt {
+  background-color: #1a252f;
+  padding-top: 2%;
+}
+
+.nb {
+  padding-top: 2%;
+}
+
+.carousel {
+  padding-bottom: 2%;
+}
 
 .carousel-inner {
   display: block;
@@ -8,6 +20,50 @@ th {
   text-align: center;
 }
 
+td,
+th {
+  width: 20%;
+}
+
 .material-icons {
   font-size: 16px;
+}
+
+#forms,
+.about-us {
+  color: white;
+  background: #476878;
+  padding-bottom: 5%;
+}
+
+.nb,
+.carousel,
+.footer {
+  color: white;
+  background: #233640;
+}
+
+.about-us,
+.footer {
+  padding: 5%;
+}
+
+.copyrights {
+  background-color: #1a252f;
+  color: white;
+}
+
+
+/* Divider (Horizontal Line) Styling */
+span {
+  display: inline-block;
+  vertical-align: middle;
+  max-width: 5em;
+  font-size: 20px;
+}
+
+.outer-line {
+  width: 40%;
+  border-bottom: 5px solid #fff;
+
 }
