@@ -1,6 +1,6 @@
 .jt {
   background-color: #1a252f;
-  padding-top: 2%;
+  padding-top: 3%;
 }
 
 .nb {
@@ -43,9 +43,20 @@ th {
   background: #233640;
 }
 
-.about-us,
+.about-us {
+  padding-top: 2%;
+  padding-bottom: 5%;
+  padding-left: 17%;
+  padding-right: 17%;
+}
+
 .footer {
   padding: 5%;
+}
+
+.bio {
+  font-size: 1.5em;
+  font-weight: 400;
 }
 
 .copyrights {
@@ -65,5 +76,9 @@ span {
 .outer-line {
   width: 40%;
   border-bottom: 5px solid #fff;
+}
 
+.outer-line-dark {
+  width: 40%;
+  border-bottom: 5px solid #233640;
 }

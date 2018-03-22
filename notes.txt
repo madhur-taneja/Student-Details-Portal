@@ -1,0 +1,18 @@
+deleteStudent()
+
+#41//console.log(this);
+    //console.log($(this).parents()[1]);
+    //console.log($(sib).html());
+
+editStudent()
+
+#64    //let inp = $(sib[1]).children()[0];
+    //console.log($(inp).attr('value'));
+
+saveEditing()
+#72// $(input).val(
+    //   function(index, value){
+    //       return value.substr(0, value.length - 1);
+    // })
+
+#75    //console.log(sessionStorage.getItem(rn));
