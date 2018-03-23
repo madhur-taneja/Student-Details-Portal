@@ -4,6 +4,7 @@
       <meta charset="utf-8">
       <title> Student Portal </title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
       <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" integrity="sha384-3AB7yXWz4OeoZcPbieVW64vVXEwADiYyAEhwilzWsLw+9FgqpyjjStpPnpBO8o8S" crossorigin="anonymous">
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
       <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -96,34 +97,38 @@
                <img src="img/study7.jpg" alt="Me trying to finish the semester like...." class="img-responsive">
             </div>
             <div class="col-md-6 col-sm-6">
-               <form class="form-horizontal row">
-                  <div class="form-group col-sm-12">
-                     <label for="name" class="control-label "> Name: </label>
-                     <input type="text" class="form-control" id="fname" placeholder="Enter Full Name" name="fullname" required="required" />
+               <form data-toggle="validator" role="form">
+                  <div class="form-group">
+                    <label for="inputName" class="control-label">Name</label>
+                    <input type="text" class="form-control" id="fname" pattern="[A-Za-z]{3,}" placeholder="Enter Name (Atleast 3 characters)" required>
                   </div>
-                  <div class="form-group col-sm-12 col-md-12">
-                     <label for="Roll No." class="control-label"> Roll Number: </label>
-                     <input type="number" class="form-control" id="rnumber" placeholder="Enter Roll No." name="rollnumber" required />
+                  <div class="form-group has-feedback">
+                      <label for="inputRollNumber" class="control-label">Roll Number</label>
+                      <div class="input-group">
+                          <span class="input-group-addon">#</span>
+                          <input type="text" pattern="[0-9]{4,}" maxlength="15" class="form-control" id="rnumber" data-error="Atleast 4" placeholder="Enter Roll Number (Atleast 4 digits)" required>
+                      </div>
+                      <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
                   </div>
-                  <div class="form-group col-sm-12 col-md-12">
-                     <label id="sect"> Section:
-                       <input type="radio" name="section" value="uca" required /> U.C.A.
-                       <input type="radio" name="section" value="da"> D.A.
-                       <input type="radio" name="section" value="java"> JAVA
-                       <input type="radio" name="section" value="cpm"> C.P.M.
-                       <input type="radio" name="section" value="pega"> PEGA
-                     </label>
+                  <div class="form-group">
+                    <label id="sect"> Section:
+                      <input type="radio" name="section" value="uca" required> U.C.A.
+                      <input type="radio" name="section" value="da" required> D.A.
+                      <input type="radio" name="section" value="java" required> JAVA
+                      <input type="radio" name="section" value="cpm" required> C.P.M.
+                      <input type="radio" name="section" value="pega" required> PEGA
+                    </label>
                   </div>
-                  <div class="form-group col-sm-12 col-md-12">
-                     <label id="gen"> Gender:
-                     <input type="radio" name="gender" value="male" required /> Male
-                     <input type="radio" name="gender" value="female"> Female
-                     </label>
+                  <div class="form-group">
+                    <label id="gen"> Gender:
+                      <input type="radio" name="gender" value="male" required> Male
+                      <input type="radio" name="gender" value="female" required> Female
+                    </label>
                   </div>
-                  <div class="form-group col-sm-12 col-md-12">
-                     <button type="submit" class="btn btn-primary" onclick="newStudent()">Submit</button>
+                  <div class="form-group">
+                    <button id="bt" type="submit" class="btn btn-primary">Submit</button>
                   </div>
-               </form>
+              </form>
             </div>
          </div>
          <!-- Table -->

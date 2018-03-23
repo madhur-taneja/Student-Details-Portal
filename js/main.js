@@ -45,6 +45,12 @@ let newStudent = () => {
     $(".form-horizontal").trigger("reset");
 }
 
+// Calling the function on form submission
+$("form").submit(function(){
+    newStudent();
+});
+
+
 // Function for deleting a Student entry
 function deleteStudent() {
 
