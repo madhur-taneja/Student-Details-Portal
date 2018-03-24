@@ -1,6 +1,14 @@
 // Global Variables
 var old_rn;
 
+$(document).ready(function() {
+  $("#form-reset").submit( function() {
+    $('html, body').animate({
+      scrollTop: $("#details").offset().top
+    }, 1500);
+  });
+});
+
 // Fetching data from the form and making a new entry
 // Function for creating a new Student
 let newStudent = () => {
@@ -32,7 +40,7 @@ let newStudent = () => {
           <td>${rn}</td>
           <td>${outputDetailsJson.sect}</td>
           <td>${outputDetailsJson.gen}</td>
-          <td> <button type="button" class="btn btn-info" onclick="editStudent.call(this)"> Edit <i class="material-icons tiny"> edit </i></button>
+          <td> <button type="button" class="btn btn-info edit" onclick="editStudent.call(this)"> Edit <i class="material-icons tiny"> edit </i></button>
           <button type="button" class="btn btn-danger" onclick="deleteStudent.call(this)"> Delete <i class="material-icons tiny"> delete </i></button> </td>
       </tr>`);
 
@@ -42,7 +50,7 @@ let newStudent = () => {
     }
 
     // Resetting the form
-    $(".form-horizontal").trigger("reset");
+    $("#form-reset").trigger("reset");
 }
 
 // Calling the function on form submission
@@ -76,12 +84,17 @@ function editStudent() {
     // Looping through the columns of the table
     for (i = 0; i < Object.keys(sib).length - 3; i++) {
         vl = $(sib[i]).html();
-        $(sib[i]).html(`<input type="text" class="form-control" id="${i}" placeholder="Enter Details" name="details" value="${vl}">`);
+        $(sib[i]).html(`<input type="text" class="form-control" id="${old_rn}${i}" placeholder="Enter Details" name="details" value="${vl}">`);
     }
     $(sib[i]).html(`
     <button type="button" class="btn btn-success" onclick="saveEditing.call(this, old_rn)"> Save <i class="material-icons tiny"> save </i></button>
     <button type="button" class="btn btn-warning" onclick="cancelEditing.call(this)"> Cancel <i class="material-icons tiny"> cancel </i></button>
   `);
+
+    // Disabling all editing buttons of all other entries
+    if($(".edit").prop("disabled", false)) {
+      $(".edit").prop("disabled", true);
+    }
 }
 
 // Function for saving edted Student a entry
@@ -89,7 +102,7 @@ function saveEditing(old_rn) {
 
     // Storing the references of elements
     let par = $(this).parents()[1];
-    let rn = $("#1").val();
+    let rn = $(`#${old_rn}1`).val();
 
     // Fetching the details from session storage
     let getDetails = sessionStorage.getItem(rn);
@@ -100,9 +113,9 @@ function saveEditing(old_rn) {
         let outputDetailsJson = JSON.parse(getDetails);
 
         // Updating values
-        outputDetailsJson.name = $("#0").val();
-        outputDetailsJson.sect = $("#2").val();
-        outputDetailsJson.gen = $("#3").val();
+        outputDetailsJson.name = $(`#${old_rn}0`).val();
+        outputDetailsJson.sect = $(`#${old_rn}2`).val();
+        outputDetailsJson.gen = $(`#${old_rn}3`).val();
 
         // Converting the object into jSON
         let inputDetailsJson = JSON.stringify(outputDetailsJson);
@@ -115,7 +128,7 @@ function saveEditing(old_rn) {
         <td>${rn}</td>
         <td>${outputDetailsJson.sect}</td>
         <td>${outputDetailsJson.gen}</td>
-        <td> <button type="button" class="btn btn-info" onclick="editStudent.call(this)"> Edit <i class="material-icons tiny"> edit </i></button>
+        <td> <button type="button" class="btn btn-info edit" onclick="editStudent.call(this)"> Edit <i class="material-icons tiny"> edit </i></button>
         <button type="button" class="btn btn-danger" onclick="deleteStudent.call(this)"> Delete <i class="material-icons tiny"> delete </i></button> </td>);
     `);
     }
@@ -125,9 +138,9 @@ function saveEditing(old_rn) {
         sessionStorage.removeItem(old_rn);
         // Creating a new entry by fetching values from the form
         let studentDetails = {
-            name: $('#0').val(),
-            sect: $('#2').val(),
-            gen: $('#3').val()
+            name: $(`#${old_rn}0`).val(),
+            sect: $(`#${old_rn}2`).val(),
+            gen: $(`#${old_rn}3`).val()
         }
 
         // Converting the object into jSON
@@ -141,9 +154,14 @@ function saveEditing(old_rn) {
         <td>${rn}</td>
         <td>${studentDetails.sect}</td>
         <td>${studentDetails.gen}</td>
-        <td> <button type="button" class="btn btn-info" onclick="editStudent.call(this)"> Edit <i class="material-icons tiny"> edit </i></button>
+        <td> <button type="button" class="btn btn-info edit" onclick="editStudent.call(this)"> Edit <i class="material-icons tiny"> edit </i></button>
         <button type="button" class="btn btn-danger" onclick="deleteStudent.call(this)"> Delete <i class="material-icons tiny"> delete </i></button> </td>
     `);
+    }
+
+    // Disabling all editing buttons of all other entries
+    if($(".edit").prop("disabled", true)) {
+      $(".edit").prop("disabled", false);
     }
 }
 
@@ -152,7 +170,7 @@ function cancelEditing() {
 
     // Storing the references of elements
     let par = $(this).parents()[1];
-    let rn = $("#1").val();
+    let rn = $(`#${old_rn}1`).val();
 
     // Fetching the details from session storage
     let getDetails = sessionStorage.getItem(rn);
@@ -165,7 +183,7 @@ function cancelEditing() {
     <td>${rn}</td>
     <td>${outputDetailsJson.sect}</td>
     <td>${outputDetailsJson.gen}</td>
-    <td> <button type="button" class="btn btn-info" onclick="editStudent.call(this)"> Edit <i class="material-icons tiny"> edit </i></button>
+    <td> <button type="button" class="btn btn-info edit" onclick="editStudent.call(this)"> Edit <i class="material-icons tiny"> edit </i></button>
     <button type="button" class="btn btn-danger" onclick="deleteStudent.call(this)"> Delete <i class="material-icons tiny"> delete </i></button> </td>
   `);
 
@@ -174,6 +192,10 @@ function cancelEditing() {
     // Storing the details in session storage
     sessionStorage.setItem(rn, inputDetailsJson);
 
+    // Disabling all editing buttons of all other entries
+    if($(".edit").prop("disabled", true)) {
+      $(".edit").prop("disabled", false);
+    }
 }
 
 // Function to delete all existing records
