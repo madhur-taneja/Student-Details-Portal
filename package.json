@@ -1,11 +1,11 @@
 {
   "name": "student-details-portal",
   "version": "1.0.0",
-  "description": "This project contains a web page the inputs student details, stores them in the local storage and displays them.",
+  "description": "This project contains a web page the inputs student details, stores them in the session storage and displays them.",
   "main": "main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-	"build": "babel ./js/* -d ES6"
+	"build": "babel src/ES6/* -d js"
   },
   "keywords": [
     "Student",
