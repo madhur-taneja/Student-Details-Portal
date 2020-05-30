@@ -1,12 +1,15 @@
+/* Jumbotron */
 .jt {
   background-color: #1a252f;
   padding-top: 3%;
 }
 
+/* Navbar */
 .nb {
   padding-top: 2%;
 }
 
+/* Carousel */
 .carousel {
   padding-bottom: 2%;
 }
@@ -16,6 +19,7 @@
   height: 540px;
 }
 
+/* Table */
 th {
   text-align: center;
 }
@@ -25,8 +29,9 @@ th {
   width: 20%;
 }
 
-.material-icons {
-  font-size: 16px;
+/* Form */
+.form-spacing {
+	padding: 2rem;
 }
 
 #forms,
@@ -36,13 +41,7 @@ th {
   padding-bottom: 5%;
 }
 
-.nb,
-.carousel,
-.footer {
-  color: white;
-  background: #233640;
-}
-
+/* About Us */
 .about-us {
   padding-top: 2%;
   padding-bottom: 5%;
@@ -50,13 +49,14 @@ th {
   padding-right: 17%;
 }
 
-.footer {
-  padding: 5%;
-}
-
 .bio {
   font-size: 1.5em;
   font-weight: 400;
+}
+
+/* Footer */
+.footer {
+  padding: 5%;
 }
 
 .copyrights {
@@ -64,6 +64,17 @@ th {
   color: white;
 }
 
+/* Shared */
+.nb,
+.carousel,
+.footer {
+  color: white;
+  background: #233640;
+}
+
+.material-icons {
+  font-size: 16px;
+}
 
 /* Divider (Horizontal Line) Styling */
 span {
