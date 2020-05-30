@@ -5,11 +5,11 @@
   "main": "main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-	"build": "babel src/ES6/* -d js"
+    "build": "babel src/ES6/* -d js"
   },
   "keywords": [
     "Student",
-	"Details",
+    "Details",
     "Portal",
     "Student Details Portal",
     "details",
