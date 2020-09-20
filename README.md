@@ -80,7 +80,7 @@ Start by setting up the project environment. `cd` into the project's root folder
 	* `deleteAll`
   
   Link all the resources to `index.html` <br>
-  For details now how everything has been implemented, refer the source code.
+  For details on how everything has been implemented, refer the source code.
 
 ## Running the App
 
